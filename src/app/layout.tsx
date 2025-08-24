@@ -1,3 +1,6 @@
+import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import localFont from "next/font/local";
@@ -17,8 +20,9 @@ const galber = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Orator",
-  description: "Web App for Orator Club | IIITN",
+  title: "Orator - IIIT Nagpur Debate Club",
+  description:
+    "The premier debate and public speaking club of IIIT Nagpur. Where words meet wisdom and voices find their power.",
 };
 
 export default function RootLayout({
@@ -30,7 +34,10 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className={`${jost.variable} ${galber.variable} antialiased`}>
+        <Header />
+        <Banner />
         {children}
+        <Footer />
       </body>
     </html>
   );

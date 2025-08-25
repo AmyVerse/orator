@@ -2,9 +2,15 @@ import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
-import { Jost } from "next/font/google";
+import { Inter, Jost } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const jost = Jost({
   weight: ["400", "500", "700"],
@@ -33,7 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className={`${jost.variable} ${galber.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${jost.variable} ${galber.variable} font-sans antialiased`}
+      >
         <Header />
         <Banner />
         {children}

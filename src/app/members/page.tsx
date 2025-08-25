@@ -1,6 +1,6 @@
 "use client";
 
-import { Award, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useState } from "react";
 
 export default function MembersPage() {
@@ -189,58 +189,26 @@ export default function MembersPage() {
           </p>
         </div>
 
-        {/* Year Timeline */}
+        {/* Year Selection */}
         <div className="flex justify-center mb-16">
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-300 transform -translate-y-1/2 z-0"></div>
-
-            {/* Timeline Points */}
-            <div className="relative z-10 flex items-center space-x-32">
-              {timelineYears.map((item, index) => (
-                <div key={item.year} className="flex flex-col items-center">
-                  <button
-                    onClick={() => !item.disabled && setSelectedYear(item.year)}
-                    disabled={item.disabled}
-                    className={`relative w-12 h-12 rounded-full border-4 transition-all duration-300 transform hover:scale-110 ${
-                      selectedYear === item.year
-                        ? "bg-[#4e230f] border-[#4e230f] shadow-lg"
-                        : item.disabled
-                        ? "bg-gray-200 border-gray-300 cursor-not-allowed opacity-50"
-                        : "bg-white border-[#4e230f] hover:bg-[#4e230f]/10"
-                    }`}
-                  >
-                    {selectedYear === item.year && (
-                      <div className="absolute inset-2 bg-white rounded-full"></div>
-                    )}
-                  </button>
-
-                  <div className="mt-4 text-center">
-                    <div
-                      className={`text-lg font-bold ${
-                        selectedYear === item.year
-                          ? "text-[#4e230f]"
-                          : item.disabled
-                          ? "text-gray-400"
-                          : "text-gray-600"
-                      }`}
-                    >
-                      {item.label}
-                    </div>
-                    {item.disabled && (
-                      <div className="text-xs text-gray-400 mt-1">
-                        Coming Soon
-                      </div>
-                    )}
-                    {selectedYear === item.year && (
-                      <div className="text-sm text-[#4e230f] mt-1 font-medium">
-                        Current Team
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="flex items-center space-x-4 bg-white rounded-full p-2 shadow-lg">
+            {timelineYears.map((item) => (
+              <button
+                key={item.year}
+                onClick={() => !item.disabled && setSelectedYear(item.year)}
+                disabled={item.disabled}
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                  selectedYear === item.year
+                    ? "bg-[#4e230f] text-white"
+                    : item.disabled
+                    ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                    : "bg-transparent text-gray-600 hover:bg-gray-100"
+                }`}
+              >
+                {item.label}
+                {item.disabled && <span className="ml-2 text-xs">(Soon)</span>}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -347,7 +315,7 @@ export default function MembersPage() {
                   </div>
                   <div>
                     <div className="text-4xl font-bold text-amber-400 mb-2">
-                      15
+                      10
                     </div>
                     <div className="text-[#fcf3cc]">Domain Areas</div>
                   </div>
@@ -368,7 +336,7 @@ export default function MembersPage() {
             </section>
 
             {/* Notable Alumni */}
-            <section className="mb-20">
+            {/* <section className="mb-20">
               <h2 className="text-4xl font-bold text-[#4e230f] text-center mb-12">
                 Notable Alumni
               </h2>
@@ -394,7 +362,7 @@ export default function MembersPage() {
                   </div>
                 ))}
               </div>
-            </section>
+            </section> */}
 
             {/* Join Us CTA */}
             <section className="text-center">

@@ -3,7 +3,7 @@ import { BookOpen, Calendar, Trophy, Users } from "lucide-react";
 export default function HistoryPage() {
   const milestones = [
     {
-      year: "2020",
+      year: "2021",
       title: "Foundation of Orator",
       description:
         "Founded by a group of passionate students who believed in the power of effective communication and debate.",
@@ -20,7 +20,7 @@ export default function HistoryPage() {
       year: "2022",
       title: "Regional Recognition",
       description:
-        "Won the Central India Inter-College Debate Championship, establishing our reputation in the debate circuit.",
+        "Multiple wins across MUN and Debate competition in India",
       achievement: "Regional Champions",
     },
     {
@@ -31,18 +31,18 @@ export default function HistoryPage() {
       achievement: "100+ active members",
     },
     {
-      year: "2024",
-      title: "Excellence Award",
+      year: "2025",
+      title: "Most succesfull event : Infacto 3.0",
       description:
-        "Received the 'Best Student Club' award from IIIT Nagpur for outstanding contribution to student development.",
-      achievement: "Best Club Award",
+        "An inter-college debate competition based on Oxford style.",
+      achievement: "150+ participations",
     },
     {
       year: "2025",
       title: "Current Legacy",
       description:
         "Continuing our mission to foster eloquent speakers and critical thinkers who will shape tomorrow's discourse.",
-      achievement: "150+ members strong",
+      achievement: "100+ members strong",
     },
   ];
 
@@ -74,8 +74,8 @@ export default function HistoryPage() {
   ];
 
   const legacyNumbers = [
-    { number: "500+", label: "Alumni Worldwide" },
-    { number: "200+", label: "Events Conducted" },
+    { number: "100+", label: "Alumni Worldwide" },
+    { number: "20+", label: "Events Conducted" },
     { number: "50+", label: "Awards Won" },
     { number: "25+", label: "Partner Institutions" },
   ];
@@ -110,7 +110,7 @@ export default function HistoryPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
                   <p className="mb-4">
-                    Orator was founded in 2020 by a group of passionate students
+                    Orator was founded in 2021 by a group of passionate students
                     who recognized the transformative power of effective
                     communication. What started as informal discussions in the
                     campus cafeteria grew into structured debates, and
@@ -140,7 +140,7 @@ export default function HistoryPage() {
                     through the power of words and wisdom."
                   </blockquote>
                   <div className="mt-4 text-sm text-gray-600">
-                    - Founding Members, 2020
+                    - Founding Members, 2021
                   </div>
                 </div>
               </div>

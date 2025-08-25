@@ -5,62 +5,53 @@ export default function EventsPage() {
   const upcomingEvents = [
     {
       id: 1,
-      title: "Parliamentary Debate Workshop",
-      date: "February 15, 2025",
-      time: "4:00 PM - 6:00 PM",
-      location: "Seminar Hall A",
+      title: "Infacto 4.0 : Order and Chaos",
+      date: "TBD",
+      time: "TBD",
+      location: "Academic Building",
       description:
-        "Learn the fundamentals of parliamentary style debating with expert guidance from experienced debaters.",
-      category: "Workshop",
-      registrationOpen: true,
+        "An Oxford-style debate that brings together voices from across the college, sparking powerful arguments, critical insights, and a clash of perspectives.",
+      category: "Competition",
+      registrationOpen: false,
+      registrationLink: "/join", // Link for registration when open
+      learnMoreLink: "/events/infacto4o", // Link to detailed event page
     },
     {
       id: 2,
-      title: "Inter-College Debate Championship",
-      date: "February 22, 2025",
-      time: "10:00 AM - 5:00 PM",
-      location: "Auditorium",
-      description:
-        "Compete against the best debaters from colleges across the region in this prestigious tournament.",
+      title: "Tantra-Fiesta x Orator",
+      date: "October 10-11, 2025",
+      time: "TBD",
+      location: "Academic Building",
+      description: "to be revealed",
       category: "Competition",
-      registrationOpen: true,
-    },
-    {
-      id: 3,
-      title: "Public Speaking Masterclass",
-      date: "March 1, 2025",
-      time: "3:00 PM - 5:00 PM",
-      location: "Conference Room B",
-      description:
-        "Master the art of captivating public speaking with professional trainers and industry experts.",
-      category: "Masterclass",
-      registrationOpen: true,
+      registrationOpen: false,
+      registrationLink: "/join", // Link for registration when open
+      learnMoreLink: "/tf2025",
     },
   ];
 
   const pastEvents = [
     {
       id: 4,
-      title: "Annual Debate Championship 2024",
-      date: "December 15, 2024",
+      title: "Rang-e-Vaad : TURNCOURT",
+      date: "April 19, 2025",
       description:
-        "Our biggest event of the year with participants from 25+ colleges.",
+        "Every case has two sides, but can you argue both? One moment you're defending, the next you're tearing it apart.",
       category: "Competition",
     },
     {
       id: 5,
-      title: "Rhetoric and Reasoning Workshop",
-      date: "November 20, 2024",
+      title: "MUN 3.0",
+      date: "February 27-28, 2025",
       description:
-        "A deep dive into the art of persuasive speaking and logical argumentation.",
-      category: "Workshop",
+        "Global security hangs in the balance. The agenda for UNGA-DISEC is here—diplomacy, strategy, and tough decisions await.",
+      category: "Competition",
     },
   ];
 
   return (
     <main className="pt-24 min-h-screen bg-[#fcf3cc]">
       <div className="container mx-auto px-4 py-12">
-        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-[#4e230f] mb-6">
             Events
@@ -71,7 +62,6 @@ export default function EventsPage() {
           </p>
         </div>
 
-        {/* Upcoming Events */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-[#4e230f] mb-8">
             Upcoming Events
@@ -115,15 +105,27 @@ export default function EventsPage() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3">
+                    {event.registrationOpen ? (
+                      <Link
+                        href={event.registrationLink || "/join"}
+                        className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300 text-center"
+                      >
+                        Register Now
+                      </Link>
+                    ) : (
+                      <button
+                        disabled
+                        className="bg-gray-300 text-gray-500 px-6 py-2 rounded-lg font-semibold cursor-not-allowed text-center"
+                      >
+                        Register Now
+                      </button>
+                    )}
                     <Link
-                      href="/join"
-                      className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300 text-center"
+                      href={event.learnMoreLink || "#"}
+                      className="border border-[#4e230f] text-[#4e230f] hover:bg-[#4e230f] hover:text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300 text-center"
                     >
-                      Register Now
-                    </Link>
-                    <button className="border border-[#4e230f] text-[#4e230f] hover:bg-[#4e230f] hover:text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
                       Learn More
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -131,7 +133,6 @@ export default function EventsPage() {
           </div>
         </section>
 
-        {/* Past Events */}
         <section>
           <h2 className="text-3xl font-bold text-[#4e230f] mb-8">
             Past Events
@@ -160,7 +161,6 @@ export default function EventsPage() {
           </div>
         </section>
 
-        {/* Call to Action */}
         <section className="mt-16 text-center">
           <div className="bg-[#4e230f] rounded-lg p-12">
             <h2 className="text-3xl font-bold text-[#fcf3cc] mb-4">

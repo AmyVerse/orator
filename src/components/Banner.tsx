@@ -14,16 +14,13 @@ export default function Banner() {
     <div className="bg-white text-orange-600 py-2 overflow-hidden relative z-40 border-b border-orange-200">
       <div className="animate-marquee whitespace-nowrap">
         <span className="text-sm md:text-base font-semibold px-4">
-          🎉 INFACTO 4.0 is right at the corner! Be ready to witness Orator's
-          first impactful and most successful event! 🎉
+          🎉 INFACTO 4.0 is just around the corner! Get ready to experience Orator's first and most anticipated event! 🎉
         </span>
         <span className="text-sm md:text-base font-semibold px-4">
-          🎉 INFACTO 4.0 is right at the corner! Be ready to witness Orator's
-          first impactful and most successful event! 🎉
+          🎉 INFACTO 4.0 is just around the corner! Get ready to experience Orator's first and most anticipated event! 🎉
         </span>
         <span className="text-sm md:text-base font-semibold px-4">
-          🎉 INFACTO 4.0 is right at the corner! Be ready to witness Orator's
-          first impactful and most successful event! 🎉
+          🎉 INFACTO 4.0 is just around the corner! Get ready to experience Orator's first and most anticipated event! 🎉
         </span>
       </div>
     </div>
